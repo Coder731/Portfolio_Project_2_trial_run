@@ -5,9 +5,9 @@ export const deleteSearchResults = () => {
         parentElement.removeChild(child);
         child = parentElement.lastElementChild;
     }
-}
+};
 export const buildSearchResults = (resultArray) => {
-    resultArray.forEach(result => {
+    resultArray.forEach((result) => {
         const resultItem = createResultItem(result);
         const resultContents = document.createElement("div");
         resultContents.classList.add("resultContents");
@@ -21,7 +21,7 @@ export const buildSearchResults = (resultArray) => {
         const searchResults = document.getElementById("searchResults");
         searchResults.append(resultItem);
     });
-}
+};
 
 const createResultItem = (result) => {
     const resultItem = document.createElement("div");
@@ -29,13 +29,13 @@ const createResultItem = (result) => {
     const resultTitle = document.createElement("div");
     resultTitle.classList.add("resultTitle");
     const link = document.createElement("a");
-    link.href = `https://en.wikipedia.org/?curid=${result.id}`
+    link.href = `https://en.wikipedia.org/?curid=${result.id}`;
     link.textContent = result.title;
     link.target = "_blank";
     resultTitle.append(link);
     resultItem.append(resultTitle);
     return resultItem;
-}
+};
 
 const createResultImage = (result) => {
     const resultImage = document.createElement("div");
@@ -45,7 +45,7 @@ const createResultImage = (result) => {
     img.alt = result.title;
     resultImage.append(img);
     return resultImage;
-}
+};
 
 const createResultText = (result) => {
     const resultText = document.createElement("div");
@@ -55,14 +55,14 @@ const createResultText = (result) => {
     resultDescription.textContent = result.text;
     resultText.append(resultDescription);
     return resultText;
-}
+};
 
 export const clearStatsLine = () => {
     document.getElementById("stats").textContent = "";
 };
 
 export const setStatsLine = (numberOfResults) => {
-    const statLine = document.getElementById('stats');
+    const statLine = document.getElementById("stats");
     if (numberOfResults) {
         statLine.textContent = `Displaying ${numberOfResults} results.`;
     } else {

@@ -1,4 +1,4 @@
-import { deleteSearchResults } from "./searchResults";
+// import { deleteSearchResults } from "./searchResults";
 
 export const setSearchFocus = () => {
     document.getElementById("search").focus();
@@ -11,10 +11,10 @@ export const showClearTextButton = () => {
         clear.classList.remove("none");
         clear.classList.add("flex");
     } else {
-        clear.classList.add("none");
-        clear.classList.remove("flex");
+      clear.classList.add("none");
+      clear.classList.remove("flex");
     }
-}
+};
 
 export const clearSearchText = (event) => {
     event.preventDefault();
@@ -30,4 +30,4 @@ export const clearPushListener = (event) => {
         event.preventDefault();
         document.getElementById("clear").click();
     }
-}
+};
