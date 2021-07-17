@@ -52,7 +52,7 @@ const processWikiResults = (results) => {
             : null;
         const item = {
             id: id,
-            title: title;
+            title: title,
             img: img,
             text: text
         };
